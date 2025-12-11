@@ -1,0 +1,68 @@
+</html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.82.0">
+    <title>Register form</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="index.css" rel="stylesheet">
+</head>
+
+<body class="signup-form">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-xl-5 mx-auto">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+
+                <div class="card-body p-4 p-sm-5">
+                    <div class="logo-card">
+                        <img class="logo" th:src="@{/images/logo.png}" alt="" />
+                    </div>
+                    <h4 class="card-title text-center mb-5 fw-light fs-5">Sign in</h4>
+
+                    <form th:action="@{/signin}" method="post" class="form-signin">
+
+                        <div class="form-floating mb-3">
+                            <input type="email" name="email" class="form-control" placeholder="E-mail" required autofocus/>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" name="password" class="form-control" placeholder="Password" required/>
+                        </div>
+
+                        <div class="d-grid mb-2">
+                            <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">
+                                Sign in
+                            </button>
+                        </div>
+
+                        <a class="d-block text-center mt-2 small" href="/flashcash/signup">New to flash cash? Sign up</a>
+
+                        <hr class="my-4">
+
+                        <div class="d-grid mb-2">
+                            <button class="btn btn-lg btn-google btn-login fw-bold text-uppercase" type="submit">
+                                <i class="fab fa-google me-2"></i> Sign in with Google
+                            </button>
+                        </div>
+
+                        <div class="d-grid">
+                            <button class="btn btn-lg btn-facebook btn-login fw-bold text-uppercase" type="submit">
+                                <i class="fab fa-facebook-f me-2"></i> Sign in with Facebook
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

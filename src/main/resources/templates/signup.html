@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body class="signup-form">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-img-left d-none d-md-flex">
+                    <!-- Image -->
+                </div>
+                <div class="card-body p-4 p-sm-5">
+                    <div class="logo-here">
+                        <img class="logo" src="" th:src="@{/images/logo.png}" alt=""/>
+                    </div>
+                    <h5 class="card-title text-center mb-5 fw-light fs-5">Sign up</h5>
+
+                    <!-- CORRECTION: La balise form doit englober tous les inputs -->
+                    <form th:action="@{/signUp}" th:object="${signUpForm}" method="POST">
+
+                        <div class="form-floating mb-3">
+                            <input type="text" th:field="*{firstName}" class="form-control floatingInput"
+                                   id="floatingInputFirstName" placeholder="First Name"/>
+                            <label for="floatingInputFirstName">First Name</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="text" th:field="*{lastName}" class="form-control floatingInput"
+                                   id="floatingInputLastName" placeholder="Last Name"/>
+                            <label for="floatingInputLastName">Last Name</label>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="email" th:field="*{email}" class="form-control floatingInput"
+                                   id="floatingInputEmail" placeholder="Email"/>
+                            <label for="floatingInputEmail">Email</label>
+                        </div>
+
+                        <hr>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" th:field="*{password}" class="form-control floatingPassword"
+                                   id="floatingPassword" placeholder="Password"/>
+                            <label for="floatingPassword">Password</label>
+                        </div>
+
+                        <!-- CORRECTION: Utiliser confirmPassword au lieu de password -->
+                        <div class="form-floating mb-3">
+                            <input type="password" th:field="*{confirmPassword}" class="form-control floatingPassword"
+                                   id="floatingPasswordConfirm"
+                                   placeholder="Confirm Password"/>
+                            <label for="floatingPasswordConfirm">Confirm Password</label>
+                        </div>
+
+                        <div class="d-grid mb-2">
+                            <button class="btn btn-lg btn-primary btn-login fw-bold text-uppercase" type="submit">
+                                Register
+                            </button>
+                        </div>
+                    </form> <!-- CORRECTION: Fermer le form ici -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
