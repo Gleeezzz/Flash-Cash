@@ -8,6 +8,7 @@ import java.util.List;
 
 @Data
 @Entity
+@Table(name = "user")
 public class User {
 
     @Id
@@ -20,6 +21,8 @@ public class User {
     private String password;
     @ManyToMany
     private List<Link> links;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER) // Save account automaticly
+    @JoinColumn(name = "account_account_id", referencedColumnName = "accountId") // Column name on the table
     private UserAccount account;
+
 }

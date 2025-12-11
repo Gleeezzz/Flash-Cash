@@ -17,7 +17,7 @@
                     <h5 class="card-title text-center mb-5 fw-light fs-5">Sign up</h5>
 
                     <!-- CORRECTION: La balise form doit englober tous les inputs -->
-                    <form th:action="@{/signUp}" th:object="${signUpForm}" method="POST">
+                    <form th:action="@{/signup}" th:object="${signUpForm}" method="POST">
 
                         <div class="form-floating mb-3">
                             <input type="text" th:field="*{firstName}" class="form-control floatingInput"
