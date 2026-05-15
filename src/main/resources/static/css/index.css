@@ -71,3 +71,33 @@ a.small:hover {
     text-decoration: underline;
     color: #007bff;
 }
+
+/* --- VEILLE TECHNOLOGIQUE : RESPONSIVE DESIGN --- */
+
+/* Adaptation pour les tablettes et mobiles (écrans inférieurs à 768px) */
+@media screen and (max-width: 768px) {
+    .card {
+        margin: 10px; /* Réduit l'espace autour de la carte sur petit écran */
+        border: none; /* On peut enlever la bordure pour gagner de la place */
+    }
+
+    .logo {
+        max-width: 120px; /* Logo légèrement plus petit sur mobile */
+    }
+
+    .btn-primary {
+        padding: 1rem; /* Bouton plus large pour faciliter le clic au doigt (tactile) */
+        font-size: 1.1rem;
+    }
+}
+
+/* Adaptation pour les très grands écrans (écrans supérieurs à 1200px) */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+
+    .card {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Ombre plus portée sur grand écran */
+    }
+}
